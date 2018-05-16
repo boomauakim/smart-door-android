@@ -1,11 +1,19 @@
 <resources>
-    <string name="add_cap">ADD</string>
     <string name="app_name">Smart Door</string>
     <string name="app_name_cap">SMART DOOR</string>
-    <string name="door_cap">DOOR</string>
-    <string name="lock_cap">LOCK</string>
-    <string name="open_cap">OPEN</string>
-    <string name="rfid_tag_cap">RFID TAG</string>
-    <string name="remove_cap">REMOVE</string>
-    <string name="security_cap">SECURITY</string>
+    <!-- Title -->
+    <string name="title_door">DOOR</string>
+    <string name="title_rfid">RFID TAG</string>
+    <string name="title_security">SECURITY</string>
+    <!-- Action -->
+    <string name="action_add">ADD</string>
+    <string name="action_lock">LOCK</string>
+    <string name="action_ok">OK</string>
+    <string name="action_open">OPEN</string>
+    <string name="action_remove">REMOVE</string>
+    <!-- Description -->
+    <string name="desc_background">Background</string>
+    <string name="desc_custom_dialog">Custom Dialog</string>
+    <string name="desc_door_box">Door box</string>
+    <string name="desc_rfid_box">RFID box</string>
 </resources>

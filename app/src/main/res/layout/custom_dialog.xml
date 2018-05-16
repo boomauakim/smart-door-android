@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/dialogBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/desc_custom_dialog"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/box_color_blue" />
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="25dp"
+        android:background="@mipmap/button_white"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/action_ok"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogBox"
+        app:layout_constraintEnd_toEndOf="@+id/dialogBox"
+        app:layout_constraintStart_toStartOf="@+id/dialogBox" />
+
+    <TextView
+        android:id="@+id/dialogText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/dialogBox"
+        app:layout_constraintStart_toStartOf="@+id/dialogBox"
+        app:layout_constraintTop_toTopOf="@+id/dialogBox" />
+</android.support.constraint.ConstraintLayout>

@@ -1,18 +1,17 @@
 package project.iot.smartdoor;
 
-import android.content.DialogInterface;
-import android.os.Build;
-import android.support.v7.app.AlertDialog;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-
-    private AlertDialog.Builder alertDialogBuilder;
-    private Button openBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,31 +22,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openButtonListener(){
-        openBtn = (Button) findViewById(R.id.openButton);
+        Button openBtn = findViewById(R.id.openButton);
         openBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createDialog();
+                createDialog("THE DOOR IS OPEN !");
             }
         });
     }
 
-    private void createDialog(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            alertDialogBuilder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog);
-        }
-        else {
-            alertDialogBuilder = new AlertDialog.Builder(this);
-        }
+    private void createDialog(String dialogMsg){
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom_dialog);
+        dialog.setCancelable(true);
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable((Color.TRANSPARENT)));
 
-        alertDialogBuilder.setTitle("Hello")
-                .setMessage("Hello")
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                       // continue with delete it !
-                    }
-                })
-                .show();
+        Button okButton = dialog.findViewById(R.id.okButton);
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+
+        TextView dialogText = dialog.findViewById(R.id.dialogText);
+        dialogText.setText(dialogMsg);
+
+        dialog.show();
     }
 }
