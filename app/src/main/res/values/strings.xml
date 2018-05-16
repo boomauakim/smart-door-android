@@ -1,0 +1,11 @@
+<resources>
+    <string name="add_cap">ADD</string>
+    <string name="app_name">Smart Door</string>
+    <string name="app_name_cap">SMART DOOR</string>
+    <string name="door_cap">DOOR</string>
+    <string name="lock_cap">LOCK</string>
+    <string name="open_cap">OPEN</string>
+    <string name="rfid_tag_cap">RFID TAG</string>
+    <string name="remove_cap">REMOVE</string>
+    <string name="security_cap">SECURITY</string>
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/bg" />
+
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/roboto_bold"
+        android:letterSpacing="0.1"
+        android:text="@string/app_name_cap"
+        android:textColor="@color/colorWhite"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+    <ImageView
+        android:id="@+id/doorBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerText"
+        app:srcCompat="@mipmap/box_header" />
+
+    <TextView
+        android:id="@+id/doorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/door_cap"
+        android:textColor="@color/colorTextInBox"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/doorBox"
+        app:layout_constraintStart_toStartOf="@+id/doorBox"
+        app:layout_constraintTop_toTopOf="@+id/doorBox" />
+
+    <Button
+        android:id="@+id/openButton"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/button_green"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/open_cap"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/doorBox"
+        app:layout_constraintStart_toStartOf="@+id/doorBox"
+        app:layout_constraintTop_toBottomOf="@+id/doorText" />
+
+    <Button
+        android:id="@+id/lockButton"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/button_red"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/lock_cap"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/doorBox"
+        app:layout_constraintStart_toStartOf="@+id/doorBox"
+        app:layout_constraintTop_toBottomOf="@+id/openButton" />
+
+    <ImageView
+        android:id="@+id/rfidTagBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doorBox"
+        app:srcCompat="@mipmap/box" />
+
+    <TextView
+        android:id="@+id/rfidTagText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/rfid_tag_cap"
+        android:textColor="@color/colorTextInBox"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/rfidTagBox"
+        app:layout_constraintStart_toStartOf="@+id/rfidTagBox"
+        app:layout_constraintTop_toTopOf="@+id/rfidTagBox" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/button_green"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/add_cap"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/rfidTagBox"
+        app:layout_constraintStart_toStartOf="@+id/rfidTagBox"
+        app:layout_constraintTop_toBottomOf="@+id/rfidTagText" />
+
+    <Button
+        android:id="@+id/removeButton"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/button_red"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/remove_cap"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/rfidTagBox"
+        app:layout_constraintStart_toStartOf="@+id/rfidTagBox"
+        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+
+</android.support.constraint.ConstraintLayout>
