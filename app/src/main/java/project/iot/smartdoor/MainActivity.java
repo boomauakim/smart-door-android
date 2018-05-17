@@ -18,17 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Add click listener
         openButtonListener();
-    }
-
-    private void openButtonListener(){
-        Button openBtn = findViewById(R.id.openButton);
-        openBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createDialog("THE DOOR IS OPEN !");
-            }
-        });
+        lockButtonListener();
+        addButtonListener();
+        removeButtonListener();
     }
 
     private void createDialog(String dialogMsg){
@@ -49,5 +43,53 @@ public class MainActivity extends AppCompatActivity {
         dialogText.setText(dialogMsg);
 
         dialog.show();
+    }
+
+    private void openButtonListener(){
+        Button openBtn = findViewById(R.id.openButton);
+        openBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog("THE DOOR IS OPEN !");
+            }
+        });
+    }
+
+    private void lockButtonListener(){
+        final Button lockBtn = findViewById(R.id.lockButton);
+        lockBtn.setText("LOCK");
+        lockBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lockBtn.getText().toString().equals("LOCK")) {
+                    lockBtn.setText("UNLOCK");
+                    createDialog("THE DOOR IS LOCKED !");
+                }
+                else if (lockBtn.getText().toString().equals("UNLOCK")) {
+                    lockBtn.setText("LOCK");
+                    createDialog("THE DOOR IS UNLOCKED !");
+                }
+            }
+        });
+    }
+
+    private void addButtonListener(){
+        Button addBtn = findViewById(R.id.addButton);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog("PLEASE TOUCH RFID TAG !");
+            }
+        });
+    }
+
+    private void removeButtonListener(){
+        Button removeBtn = findViewById(R.id.removeButton);
+        removeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog("PLEASE TOUCH RFID TAG !");
+            }
+        });
     }
 }
