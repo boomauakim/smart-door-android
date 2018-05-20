@@ -4,20 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <ImageView
-        android:id="@+id/bg"
+        android:id="@+id/header"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/desc_background"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/bg" />
+        app:srcCompat="@mipmap/header" />
 
     <TextView
         android:id="@+id/headerText"
@@ -30,34 +29,22 @@
         android:textColor="@color/white"
         android:textSize="33sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bg" />
-
-    <ImageView
-        android:id="@+id/doorBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/desc_door_box"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerText"
-        app:srcCompat="@mipmap/box_header" />
+        app:layout_constraintEnd_toEndOf="@+id/header"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header" />
 
     <TextView
         android:id="@+id/doorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/title_door"
         android:textColor="@color/grey_700"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="@+id/doorBox"
-        app:layout_constraintStart_toStartOf="@+id/doorBox"
-        app:layout_constraintTop_toTopOf="@+id/doorBox" />
+        app:layout_constraintEnd_toEndOf="@+id/header"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/headerText" />
 
     <Button
         android:id="@+id/openButton"
@@ -69,44 +56,49 @@
         android:text="@string/action_open"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/doorBox"
-        app:layout_constraintStart_toStartOf="@+id/doorBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doorText" />
 
     <Button
         android:id="@+id/lockButton"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="15dp"
         android:background="@mipmap/button_red"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/action_lock"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/doorBox"
-        app:layout_constraintStart_toStartOf="@+id/doorBox"
-        app:layout_constraintTop_toBottomOf="@+id/openButton" />
+        app:layout_constraintBottom_toTopOf="@+id/rfidTagBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openButton"
+        app:layout_constraintVertical_bias="0.22" />
 
     <ImageView
         android:id="@+id/rfidTagBox"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/desc_rfid_box"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doorBox"
+        app:layout_constraintTop_toBottomOf="@+id/header"
         app:srcCompat="@mipmap/box" />
 
     <TextView
         android:id="@+id/rfidTagText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="38dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/title_rfid"
         android:textColor="@color/grey_700"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="@+id/rfidTagBox"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/rfidTagBox"
         app:layout_constraintTop_toTopOf="@+id/rfidTagBox" />
 
@@ -128,14 +120,18 @@
         android:id="@+id/removeButton"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:background="@mipmap/button_red"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/action_remove"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/rfidTagBox"
+        app:layout_constraintBottom_toBottomOf="@+id/rfidTagBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/rfidTagBox"
-        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+        app:layout_constraintTop_toBottomOf="@+id/addButton"
+        app:layout_constraintVertical_bias="0.176" />
 
 </android.support.constraint.ConstraintLayout>
